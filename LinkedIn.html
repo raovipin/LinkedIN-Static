@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn</title>
+    <script src="https://kit.fontawesome.com/2ee7251d5b.js" crossorighin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/6269b21ca8.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background-color: lightgrey;
+
+        }
+
+
+        .container {
+            font-size: 10px;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        /* .navigator{
+            justify-content:flex-end;
+        } */
+
+        .navigation {
+            display: flex;
+            background-color: white;
+            width: 100%;
+            color: #6e6558;
+            border: 1px solid grey;
+
+
+        }
+
+        .logo>img {
+            margin: 0.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+
+        .searchbox {
+            color: white;
+
+
+        }
+
+        .searchbox>input {
+            border: 1.5px solid grey;
+            border-radius: 22px;
+            color: grey;
+            font-size: 1rem;
+            width: 20rem;
+            margin: 0.9rem 4rem;
+            padding: 12px 1rem;
+            background-color: #dce6f1;
+            font-weight: 600;
+        }
+
+
+
+
+
+        .ul {
+            display: flex;
+            list-style: none;
+            /* justify-content: center; */
+
+
+            margin-left: 8rem;
+
+        }
+
+        .fa-house {
+            font-size: 1.8rem;
+            color: grey;
+        }
+
+        .fa-house:hover {
+
+            font-size: 1.8rem;
+            color: rgb(49, 128, 193);
+        }
+
+        .fa-users {
+            font-size: 1.8rem;
+            color: grey;
+        }
+
+        .fa-users:hover {
+            font-size: 1.8rem;
+            color: rgb(49, 128, 193);
+        }
+
+        .fa-briefcase {
+            font-size: 1.8rem;
+            color: grey;
+        }
+
+        .fa-briefcase:hover {
+            font-size: 1.8rem;
+            color: rgb(4, 128, 193);
+        }
+
+        .fa-comments {
+            font-size: 1.8rem;
+            color: grey;
+
+        }
+
+        .fa-comments:hover {
+            font-size: 1.8rem;
+            color: rgb(49, 128, 193);
+
+        }
+
+        .fa-bell {
+            font-size: 1.8rem;
+            color: grey;
+        }
+
+        .fa-bell:hover {
+            font-size: 1.8rem;
+            color: rgb(49, 128, 193);
+        }
+
+        .li {
+            justify-content: center;
+            margin-top: 0.6rem;
+            padding: 0 1.5rem;
+
+
+        }
+
+        .ul .li>a {
+            display: block;
+            font-size: 1rem;
+            text-align: center;
+            font-weight: 800;
+            color: #161514;
+            text-decoration: none;
+        }
+
+        .ul .li>a:hover {
+            font-size: 1rem;
+            text-align: center;
+            font-weight: 800;
+            color: goldenrod;
+            text-decoration: underline;
+        }
+        .fa-square-caret-down{
+            font-size: 1rem;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(245, 242, 242);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown>img {
+            height: 50%;
+            width: 80%;
+            margin-top: 1rem;
+
+        }
+
+        .dropdown-content>ul {
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+
+        }
+
+        .dropdown-content .lid:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .ddd {
+            background-color: #3e8e41;
+        }
+
+        .lid {
+            color: black;
+            padding: 12px 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+
+        .Premium {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Premium>img {
+            width: 20%;
+            margin: 0.5rem;
+            height: 60%;
+            border-left: 1px solid black;
+            margin-left: 1rem;
+            padding: 0.5rem;
+        }
+
+        .paragraph {
+            font-size: 15px;
+        }
+
+        .paragraph>span {
+            display: block;
+            text-align: center;
+        }
+
+
+        /* body section  */
+        #body {
+            display: flex;
+            justify-content: start;
+            /* align-items: center; */
+        }
+
+
+
+        /* Left section  */
+
+        #userprofile {
+
+            display: flex;
+            flex-direction: column;
+            padding: 3px 20px;
+            margin: 1.5rem;
+            margin-top: 0.3rem;
+            width: 25%;
+            height: auto;
+
+
+
+        }
+
+        .description {
+            background-color: white;
+            z-index: -1;
+            border: 1px solid rgb(12, 12, 12);
+            height: 900px;
+            padding: 20px;
+            padding-top: 0px;
+            margin: 2px 20px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            position: relative;
+
+
+        }
+
+        .description img {
+            display: block;
+            margin: auto;
+            /* position: relative; */
+
+            height: 15%;
+            width: 50%;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+
+        .description::before {
+            content: '';
+            background: linear-gradient(red, green 50%, yellow);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+
+            /* overflow: hidden; */
+            content: '';
+            width: 100%;
+            height: 10%;
+
+            position: absolute;
+            z-index: -1;
+            /* this is because we want our content:  over it */
+            opacity: 0.8;
+            top: 0;
+            left: 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .bookmark {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+
+        .paragraph {
+            display: block;
+            text-align: center;
+            color: grey;
+            margin-bottom: 0.5rem;
+        }
+
+        .paragraph11 {
+            display: block;
+            text-align: left;
+            color: grey;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+
+        }
+
+        .heading2 {
+            font-size: 1rem;
+        }
+
+        .span2 {
+            display: block;
+            text-align: right;
+            color: blue;
+        }
+
+        .paragraph3 {
+            color: grey;
+            margin: 1rem 0.2rem;
+        }
+
+        .fa-bookmark {
+            font-size: 1rem;
+            margin: 0.3rem;
+        }
+
+        .heading3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .bookmark {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            /* border-bottom: 1px solid black; */
+            border-radius: 10px;
+        }
+
+        /* .recent {
+            border: 1px solid black;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-radius: 10px;
+        } */
+        .bdr {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .bdr2 {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .group {
+            margin: 0.3rem;
+            color: blue;
+        }
+
+        .grp {
+            color: rgb(18, 16, 16);
+            margin: 0.3rem;
+            margin-top: 1rem;
+
+        }
+
+        .p {
+            color: grey;
+            margin-left: 1rem;
+        }
+
+        .group1 {
+            margin: 1rem;
+            margin-left: 0.3rem;
+            color: blue;
+        }
+
+        #reparag {
+            border-bottom: 1px solid black;
+            border-radius: 10px;
+        }
+
+
+
+        /* Content  */
+        #content {
+            display: flex;
+            background-color: white;
+            flex-direction: column;
+            padding: 0px 20px;
+            margin-top: 0.3rem;
+            /* justify-content: center; */
+            width: 45%;
+            /* align-items: center; */
+            border: 1px solid rgb(12, 12, 12);
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .contentmiddle {
+            display: flex;
+
+            /* width: 40%; */
+            /* padding: 20px;
+            padding-top: 0px;
+            margin: 2px 20px;
+            margin-top: 0px;
+            margin-bottom: 20px; */
+
+
+        }
+
+        .contentmiddle>img {
+            width: 9%;
+            margin: 0.5rem;
+
+        }
+
+        .contentmiddle>input {
+            width: 500px;
+            margin: 0.7rem;
+            margin-left: 1.5rem;
+            border-radius: 22px;
+            padding: 10px;
+            font-size: 1rem;
+            height: 50px;
+        }
+
+        .ulc {
+            display: flex;
+            list-style: none;
+
+        }
+
+        /* .ulc>.lic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin:  0.2rem 1rem;
+
+        } */
+        #mgc {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            /* margin:  0.2rem 1rem; */
+        }
+
+        #mgc:hover {
+            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            /* margin:  0.2rem 1rem; */
+        }
+
+        #mgd {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            /* margin:  0.2rem 1rem; */
+        }
+
+        #mgd:hover {
+            color: darkcyan;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            /* margin:  0.2rem 1rem; */
+        }
+
+        #mge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            /* margin:  0.2rem 1rem; */
+        }
+
+        #mge:hover {
+            color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            /* margin:  0.2rem 1rem; */
+        }
+
+        #mgf {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            /* margin:  0.2rem 1rem; */
+        }
+
+        #mgf:hover {
+            color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            /* margin:  0.2rem 1rem; */
+        }
+
+
+
+        .fa-image {
+            font-size: 1.5rem;
+            color: skyblue;
+            margin-right: .3rem;
+
+        }
+
+        .fa-video {
+            font-size: 1.5rem;
+            color: #90ee90;
+            margin-right: .3rem;
+
+
+        }
+
+        .fa-calendar {
+            font-size: 1.5rem;
+            color: #ffa500;
+            margin-right: .3rem;
+
+        }
+
+        .fa-newspaper {
+            font-size: 1.5rem;
+            color: #e98eae;
+            margin-right: .3rem;
+
+        }
+
+        /* .bgc{
+            border: 1px solid black;
+            margin: 0rem;
+            padding: 0rem;
+        } */
+
+        .king {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: start;
+            /* align-items: center; */
+
+        }
+
+        .kingimg {
+            /* margin-top: 3rem; */
+            height: 20%;
+            width: 10%;
+
+        }
+
+        .kinghead {
+            margin: 0.3rem 1.2rem;
+            padding: 0.3rem;
+            padding-top: 0rem;
+
+        }
+
+        .paraking {
+            color: grey;
+            font-size: 0.8rem;
+        }
+
+        .fa-ellipsis-vertical {
+            margin-left: 25rem;
+            margin-top: 0.3rem;
+
+        }
+
+        .post {
+            width: 100%;
+            height: 20%;
+            padding: 1rem;
+            padding-bottom: 0;
+            margin-top: 1rem;
+        }
+
+        .like {
+            display: flex;
+            align-items: center;
+            margin-left: 0.5rem;
+        }
+
+        .haha {
+            height: 10%;
+            width: 8%;
+        }
+
+        .haha1 {
+            height: 10%;
+            width: 3.5%;
+        }
+
+        .parakin {
+            color: grey;
+            margin-left: 1rem;
+            word-spacing: 0.3rem;
+        }
+
+        .thumbs {
+            display: flex;
+            list-style: none;
+            padding: 1rem;
+            padding-top: 0rem;
+            padding-left: 1.5rem;
+        }
+
+        .fa-thumbs-up {
+            padding: 2rem;
+            padding-top: 0.5rem;
+            padding-left: 0rem;
+            padding-right: 0rem;
+
+        }
+
+        .fa-comment {
+            padding: 2rem;
+            padding-top: 0.5rem;
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }
+
+        .fa-share {
+            padding: 2rem;
+            padding-top: 0.5rem;
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }
+
+        .fa-paper-plane {
+            padding: 2rem;
+            padding-top: 0.5rem;
+            padding-right: .3rem;
+            padding-left: 0rem;
+
+        }
+
+        #lit {
+            padding-right: 0.8rem;
+        }
+
+        #lit:hover {
+            color: cyan;
+            padding-right: 0.8rem;
+        }
+
+        #lit2 {
+            padding-right: 0.8rem;
+            padding-left: 0.8rem;
+        }
+
+        #lit2:hover {
+            color: grey;
+            padding-right: 0.8rem;
+            padding-left: 0.8rem;
+        }
+
+        #lit3 {
+            padding-right: 0.8rem;
+            padding-left: 0.8rem;
+        }
+
+        #lit3:hover {
+            color: darkcyan;
+            padding-right: 0.8rem;
+            padding-left: 0.8rem;
+        }
+
+        #lit4 {
+            padding-right: 0.8rem;
+            padding-left: 0.8rem;
+        }
+
+        #lit4:hover {
+            padding-right: 0.8rem;
+            color: red;
+            padding-left: 0.8rem;
+        }
+
+        /* Right Content  */
+
+
+        #Right {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 20px;
+            width: 25%;
+            height: auto;
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            margin-left: 3rem;
+            margin-top: 0.3rem;
+            /* background-color: white; */
+        }
+
+        .news {
+            display: flex;
+        }
+
+        .fa-info {
+            margin-left: 12rem;
+            margin-top: 0.3rem;
+        }
+
+        .h3 {
+            margin-top: .3rem;
+            display: flex;
+            justify-content: start;
+
+        }
+
+        .rightul {
+            padding: 1rem .5rem;
+        }
+
+        .liright {
+            padding: 0.5rem;
+            padding-right: 2rem;
+            font-weight: 800;
+        }
+
+        .bgr {
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: white;
+            padding: 2rem;
+        }
+
+        .new {
+            display: flex;
+        }
+
+        .new>.fa-info {
+            margin-left: 4rem;
+        }
+
+        .bgr1 {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+            background-color: white;
+        }
+
+        .ne {
+            display: flex;
+        }
+
+        .ne>.fa-info {
+            margin-left: 10rem;
+        }
+
+        .ingimg {
+            /* margin-top: 3rem; */
+            height: 50%;
+            width: 20%;
+
+        }
+
+        .btn {
+            border: 2px solid black;
+            border-radius: 22px;
+            width: 10rem;
+            height: 2rem;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: .5rem;
+        }
+
+        .btn:hover {
+            color: blue;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 22px;
+            width: 10rem;
+            height: 2rem;
+            font-weight: bold;
+            font-size: 1rem
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <nav class="navigation">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="image not found">
+            </div>
+            <div class="searchbox">
+
+                <input type="text" placeholder="Search ">
+
+            </div>
+            <div class="navigator">
+
+                <ul class="ul">
+                    <li class="li" id="li1"> <a href="#"> <i class="fa-solid fa-house"></i><br>Home </a></li>
+
+                    <li class="li" id="li2"> <a href="#"><i class="fa-solid fa-users"></i><br>Users</a></li>
+
+                    <li class="li" id="li3"> <a href="#"><i class="fa-solid fa-briefcase"></i> <br> Jobs</a></li>
+
+                    <li class="li" id="li4"> <a href="#"><i class="fa-regular fa-comments"></i><br>Messaging</a></li>
+
+                    <li class="li" id="li5"> <a href="#"><i class="fa-regular fa-bell"></i> <br> Notifications</a></li>
+
+                    <div class="dropdown">
+                        <img src="preimum1.jpg" alt="dd" class="ddd">
+                        <i class="fa-regular fa-square-caret-down"></i>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li class="lid">Edit Profile</li>
+                                <li class="lid">Settings</li>
+                                <li class="lid">Help</li>
+                                <li class="lid">Log Out</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+            <div class="Premium">
+                <img src="preimum1.jpg" alt="Premium Members">
+                <p class="paragraph">Try Premium Free For 1 <br> <span>Month</span> </p>
+
+            </div>
+            </ul>
+
+
+
+
+
+        </nav>
+    </div>
+
+    <section id="body">
+
+
+        <section id="userprofile">
+            <div class="description">
+                <img src="preimum1.jpg" alt="Userprofile">
+                <h1 class="heading center">Yash Sharma</h1>
+                <p class="paragraph">Technical Manager at Skill Academy</p>
+
+                <div class="bdr2">
+
+                    <p class="paragraph11">Connections</p>
+                    <h1 class="heading2">Grow your Network <span class="span2">30</span></h1>
+                    <p class="paragraph2">Who viewed your profile <span class="span2">30</span></p>
+                    <hr>
+                    <p class="paragraph3">Access exclusive tools and sights</p>
+                    <hr>
+                    <div class="bookmark">
+
+                        <i class="fa-solid fa-bookmark"></i>
+                        <h1 class="heading3">My items</h1>
+                    </div>
+                </div>
+                <div class="bdr">
+
+                    <div class="recent">
+                        <h1 class="rehead">Recent</h1>
+                        <p class="repara">#Tenser Flow</p>
+                        <p class="repara">#Tenser Flow</p>
+                        <p class="repara">#Tenser Flow</p>
+                        <p class="repara">#Tenser Flow</p>
+                        <p class="repara">#Tenser Flow</p>
+                    </div>
+                    <div class="groups">
+                        <h1 class="group">Groups</h1>
+                        <p class="grp"><i class="fa-sharp fa-solid fa-user"></i> <span class="p">TenserFlow</span></p>
+                        <p class="grp"><i class="fa-sharp fa-solid fa-user"></i> <span class="p">TenserFlow</span></p>
+                        <h1 class="group1">Followed Hastags</h1>
+                        <p class="reparag">#Tenser Flow</p>
+                        <p class="reparag">#Tenser Flow</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section id="content">
+            <div class="bgc">
+
+                <div class="contentmiddle">
+                    <img src="preimum1.jpg" alt="Content">
+                    <input type="text" placeholder="Start a Post">
+                </div>
+                <div class="option">
+                    <ul class="ulc">
+                        <li id="mgc" class="lic"><i class="fa-regular fa-image"></i>Photo</li>
+                        <li id="mgd" class="lic"><i class="fa-solid fa-video"></i>Video</li>
+                        <li id="mge" class="lic"><i class="fa-regular fa-calendar"></i>
+                            Event</li>
+                        <li id="mgf" class="lic"><i class="fa-regular fa-newspaper"></i>Write Article</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div>
+
+
+                <div class="king">
+
+
+                    <img class="kingimg" src="kingfisher1.png" alt="kingfisher1">
+                    <div class="kinghead">
+
+                        <h1>
+                            King Fisher
+
+                        </h1>
+                        <p class="paraking">1.2 Trillion Followers
+                        </p>
+                        <p class="paraking">Promoted
+                        </p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div>
+
+                    <img class="post" src="kingfisher-gc5ecfd50b_1920.jpg" alt="post">
+                </div>
+                <div class="like">
+                    <img class="haha" src="like.1.png" alt="like">
+                    <img class="haha1" src="haha1.png" alt="haha">
+                    <p class="parakin">20 Comments</p>
+                </div>
+                <hr>
+                <ul class="thumbs">
+                    <li id="lit">
+                        <i class="fa-regular fa-thumbs-up"></i> Like
+
+                    </li>
+                    <li id="lit2">
+                        <i class="fa-regular fa-comment"></i>Comments
+                    </li>
+                    <li id="lit3">
+                        <i class="fa-solid fa-share"></i>Share
+                    </li>
+                    <li id="lit4">
+                        <i class="fa-regular fa-paper-plane"></i>Send
+                    </li>
+                </ul>
+                <div class="king">
+
+
+                    <img class="kingimg" src="hamburger-g7a8b77ab3_1280.png" alt="Restro">
+                    <div class="kinghead">
+
+                        <h1>
+                            Burger King <br>
+
+                        </h1>
+                        <p class="paraking">2.2 Trillion Followers
+                        </p>
+                        <p class="paraking">Sponsored
+                        </p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div>
+
+                    <img class="post" src="bk.jpg" alt="post">
+                </div>
+                <div class="like">
+                    <img class="haha" src="like.1.png" alt="like">
+                    <img class="haha1" src="haha1.png" alt="haha">
+                    <p class="parakin">25 Comments</p>
+                </div>
+                <hr>
+                <ul class="thumbs">
+                    <li id="lit">
+                        <i class="fa-regular fa-thumbs-up"></i> Like
+
+                    </li>
+                    <li id="lit2">
+                        <i class="fa-regular fa-comment"></i>Comments
+                    </li>
+                    <li id="lit3">
+                        <i class="fa-solid fa-share"></i>Share
+                    </li>
+                    <li id="lit4">
+                        <i class="fa-regular fa-paper-plane"></i>Send
+                    </li>
+                </ul>
+        </section>
+
+        <section id="Right">
+            <div class="bgr">
+
+                <div class="news">
+                    <h3 class="h3">Linkedin News</h3>
+                    <i class="fa-solid fa-info"></i>
+                </div>
+                <ul class="rightul">
+                    <li class="liright">Indian Crosses 38,70,990 Daily Cases</li>
+                    <p class="paraking">10h-ago 5,043 reders</p>
+
+                    <li class="liright">Zomato Files for $1.17 IPO</li>
+                    <p class="paraking">13h-ago 55,043 reders</p>
+
+                    <li class="liright">Jobs pay,in IT soar</li>
+                    <p class="paraking">1d-ago 3,034 reders</p>
+
+                    <li class="liright">Google saving $1B a year from WHF</li>
+                    <p class="paraking">2d-ago 9,788 reders</p>
+                </ul>
+            </div>
+            <div class="bgr1">
+
+                <div class="new">
+                    <h3 class="h3">Today's Most Viewed Courses</h3>
+                    <i class="fa-solid fa-info"></i>
+                </div>
+                <ul class="rightul">
+                    <li class="liright">Indian Crosses 38,70,990 Daily Cases</li>
+                    <p class="paraking">Top News 9876-Reviews</p>
+
+                    <li class="liright">Zomato Files for $1.17 IPO</li>
+                    <p class="paraking">2nd Top News 9868-Reviews</p>
+
+
+                </ul>
+            </div>
+            <div class="bgr1">
+
+                <div class="ne">
+                    <h3 class="h3">Add To Your Feed</h3>
+                    <i class="fa-solid fa-info"></i>
+                </div>
+
+
+
+                <div class="king">
+
+                    <img src="beer.png" alt="beer" class="ingimg">
+                    <div class="kinghead">
+
+                        <h1>
+                            King Fisher
+
+                        </h1>
+                        <p class="paraking">Company-Consumer Goods
+                        </p>
+
+                        <button class="btn">Follow</button>
+                    </div>
+                </div>
+
+
+
+                <div class="king">
+
+                    <img src="msi.png" alt="msi" class="ingimg">
+                    <div class="kinghead">
+
+                        <h1>
+                            MSI
+
+                        </h1>
+                        <p class="paraking">Company-Product Goods
+                        </p>
+
+                        <button class="btn">Follow</button>
+                    </div>
+                </div>
+
+
+
+
+                <div class="king">
+
+                    <img src="VC.png" alt="BGMI" class="ingimg">
+                    <div class="kinghead">
+
+                        <h1>
+                            BGMI
+
+                        </h1>
+                        <p class="paraking">Company-Software
+                        </p>
+
+                        <button class="btn">Follow</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </section>
+
+
+
+
+
+
+</body>
+
+</html>
